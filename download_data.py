@@ -2,7 +2,7 @@ import os
 import requests
 from tqdm import tqdm
 
-# jpeg data
+# ISIC 2020 jpeg data
 isic_2020_images = "https://isic-challenge-data.s3.amazonaws.com/2020/ISIC_2020_Training_JPEG.zip"
 isic_2020_metadata_v1 = "https://isic-challenge-data.s3.amazonaws.com/2020/ISIC_2020_Training_GroundTruth.csv"
 isic_2020_metadata_v2 = "https://isic-challenge-data.s3.amazonaws.com/2020/ISIC_2020_Training_GroundTruth_v2.csv"
@@ -24,7 +24,7 @@ def download_file(url):
         if total_size_in_bytes != 0 and progress_bar.n != total_size_in_bytes:
             raise ("Download error")
     return local_filename
-    
+
 
 if __name__ == "__main__":
     if not os.path.exists("data"):
